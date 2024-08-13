@@ -1,0 +1,285 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: beige;
+}
+
+#acceuil {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.808),rgba(0, 0, 0, 0.788)), url('imgsHC/appart1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 10px;
+    height: 100vh;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInBackground 2s forwards;
+}
+
+.acceuil1 {
+    width: 80%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.acceuil1 img{
+    border-radius: 40px;
+    opacity: 0;
+    animation: fadeInLogo 2s 2s forwards;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+a:hover {
+    color: chocolate;
+}
+
+main {
+    margin-top: 60px; 
+    padding: 20px;
+}
+
+h1, h2 {
+    color: black;
+}
+
+section {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    color: black;
+    width: 100%;
+}
+
+.misVis, .objectValeur, #apropos {
+    flex-wrap: wrap;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 10px; 
+    padding: 20px;
+}
+
+#apropos {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.616),rgba(0, 0, 0, 0.616)), url('imgsHc/construction.jpg');
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+#apropos h2 {
+    margin-bottom: 20px;
+    color: chocolate; 
+    text-align: center;
+}
+
+#apropos p {
+    margin-bottom: 20px; /* Ajoute un espacement entre les paragraphes */
+}
+
+#apropos .mission, #apropos .vision, #apropos .objectifP, #apropos .objectifS, #apropos .valeur {
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%; 
+    opacity: 0; 
+    animation: fadeIn 2s forwards;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+#apropos strong {
+    color: chocolate;
+}
+
+#apropos .objectifP, .objectifS, .valeur {
+    color: white;
+}
+
+.valeur {
+    padding: 20px;
+}
+
+.valeur-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.valeur-item p {
+    margin: 0;
+    color: chocolate;
+}
+
+#apropos .valeur p {
+    max-width: 800px;
+    margin: 0 0 20px 0;
+    /* text-align: center;  */
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 20%;
+}
+
+.carousel-images img {
+    width: 100%;
+    flex: 0 0 100%;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#contact {
+    color: black;
+}
+
+#contact p {
+    color: black;
+}
+
+#contact img {
+    width: 2%; 
+    height: 2%;
+}
+
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLogo {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    #apropos .misVis, #apropos .objectValeur {
+        flex-direction: row;
+    }
+
+    #apropos .mission, #apropos .vision, #apropos .objectifP, #apropos .objectifS, #apropos .valeur {
+        width: 100%;
+        padding: 20px;
+        justify-content: relative;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+    }
+
+    header img {
+        width: 50%;
+    }
+
+    header a {
+        margin: 10px 0;
+    }
+
+    .misVis, .objectValeur {
+        flex-direction: column;
+    }
+
+    .mission, .vision, .objectifP, .objectifS, .valeur {
+        width: 100%;
+    }
+}
+
+#contact strong p{
+    margin-left: 3%;
+}
+li{
+    line-height: 1.6;
+}
+.resmisvis, .objval{
+    display: flex;
+    /* margin: 5%; */
+}
+.res, .obj{
+    width: 50%;
+    margin: 5%;
+}
+.misvis, .val{
+    width: 50%;
+    margin: 5%;
+}
+
